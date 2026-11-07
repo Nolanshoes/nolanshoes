@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>NOLAN SHOES STORE</title>
+<style>
+:root{--pink:#f2a3c7;--pink2:#d94f91;--black:#111;--muted:#686868;--soft:#fff3f8;--line:#eadde3}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff}
+header{background:#111;color:#fff;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.brand{font-weight:900;letter-spacing:1.8px;font-size:21px}.brand span{color:var(--pink)}
+nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-size:14px}
+.head-actions{display:flex;gap:8px;align-items:center}
+button,.btn{border:0;border-radius:5px;padding:11px 15px;background:var(--pink);color:#111;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.lang{background:#fff;color:#111;padding:9px 12px}.cartbtn{background:#292329;color:#fff}
+.hero{padding:65px 6%;min-height:350px;color:#fff;background:linear-gradient(110deg,#111 0%,#292129 64%,#f2a3c7 64%,#f2a3c7 100%);display:flex;align-items:center}
+.hero-inner{max-width:620px}.eyebrow{color:var(--pink);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(40px,7vw,68px);line-height:1.02;margin:14px 0}.hero p{line-height:1.7;font-size:17px;max-width:510px}
+section{padding:42px 6%}.section-head{margin-bottom:22px}h2{font-size:28px;margin:0 0 8px}.muted{color:var(--muted);line-height:1.5}
+.categories,.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.category{background:var(--soft);border:1px solid #f2d7e4;border-radius:8px;padding:22px}.category strong{display:block;font-size:18px;margin-bottom:7px}
+.category a{color:#a52e68;font-weight:bold;text-decoration:none}
+.product{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}
+.photo-slot{height:220px;background:linear-gradient(135deg,#f8f4f6,#f1e7ed);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.placeholder{text-align:center;color:#8b7b84;padding:20px}.placeholder b{display:block;margin-top:8px;font-size:14px}
+.product-info{padding:15px}.product-info h3{margin:0 0 7px;font-size:17px}.product-info p{margin:6px 0;color:var(--muted);font-size:13px}
+.price{font-weight:bold;color:#111;margin:10px 0}.product-actions{display:flex;gap:8px}.product-actions button{flex:1}
+.promo{background:#111;color:#fff;text-align:center;padding:38px 6%}.promo p{color:#ddd;line-height:1.6}
+footer{background:#111;color:#fff;padding:28px 6%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:12px;color:#777}.foot-small{color:#bbb}
+.admin{background:#fff8fb;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.admin-panel{max-width:900px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:block;font-size:13px;font-weight:bold;margin-bottom:5px}
+input,select{width:100%;padding:11px;border:1px solid #d9cbd2;border-radius:5px;font:inherit;background:#fff}
+.full{grid-column:1/-1}.admin-note{font-size:13px;line-height:1.5;color:#62545b}
+.cart-panel{display:none;position:fixed;right:16px;bottom:75px;width:min(370px,calc(100vw - 32px));background:#fff;border:1px solid #ddd;border-radius:10px;padding:17px;box-shadow:0 8px 30px #0003;z-index:20}
+.cart-line{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #eee;font-size:14px}
+.cart-float{position:fixed;right:16px;bottom:16px;background:#111;color:white;border-radius:30px;padding:11px 16px;z-index:21}
+.cart-float button{background:none;color:white;padding:3px}
+.empty{color:#777;font-size:14px}
+@media(max-width:720px){.hero{background:linear-gradient(145deg,#111 0%,#292129 72%,#f2a3c7 72%);padding-top:48px}.categories,.products{grid-template-columns:1fr}.photo-slot{height:245px}form{grid-template-columns:1fr}nav{gap:11px}.brand{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand">NOLAN <span>SHOES</span> STORE</div>
+ <nav><a href="#home" data-en="Home" data-rw="Ahabanza">Home</a><a href="#categories" data-en="Categories" data-rw="Ibyiciro">Categories</a><a href="#products" data-en="Shop" data-rw="Reba inkweto">Shop</a><a href="#contact" data-en="Contact" data-rw="Twandikire">Contact</a></nav>
+ <div class="head-actions"><button class="lang" id="langBtn" onclick="toggleLang()">EN / RW</button><button class="cartbtn" onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</button></div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <div class="eyebrow" data-en="Step into your style" data-rw="Genda ukeye kandi wiyizeye">Step into your style</div>
+  <h1 data-en="FIND YOUR<br>PERFECT PAIR." data-rw="HITAMO INKWETO<br>ZIKUBERA.">FIND YOUR<br>PERFECT PAIR.</h1>
+  <p data-en="Discover stylish and comfortable shoes for women, men and kids. Choose your favourite pair and order easily through WhatsApp." data-rw="Menya inkweto nziza kandi zorohereza abagore, abagabo n'abana. Hitamo izo ukunda maze uzitumize kuri WhatsApp.">Discover stylish and comfortable shoes for women, men and kids. Choose your favourite pair and order easily through WhatsApp.</p>
+  <a class="btn" href="#products" data-en="SHOP COLLECTION" data-rw="REBA INKWETO">SHOP COLLECTION</a>
+ </div>
+</section>
+<section id="categories">
+ <div class="section-head"><h2 data-en="Shop by category" data-rw="Hitamo icyiciro">Shop by category</h2><div class="muted" data-en="Shoes for every step and every age." data-rw="Inkweto za buri wese, imyaka yose.">Shoes for every step and every age.</div></div>
+ <div class="categories">
+  <div class="category"><strong data-en="Women & Girls" data-rw="Abagore n'abakobwa">Women & Girls</strong><div class="muted" data-en="Elegant, casual and everyday styles." data-rw="Inkweto nziza zo kwambara buri munsi no mu birori.">Elegant, casual and everyday styles.</div><a href="#products" data-en="Explore collection →" data-rw="Reba izihari →">Explore collection →</a></div>
+  <div class="category"><strong data-en="Men" data-rw="Abagabo">Men</strong><div class="muted" data-en="Smart, casual and sporty footwear." data-rw="Inkweto z'akazi, izisanzwe n'iz'imikino.">Smart, casual and sporty footwear.</div><a href="#products" data-en="Explore collection →" data-rw="Reba izihari →">Explore collection →</a></div>
+  <div class="category"><strong data-en="Kids" data-rw="Abana">Kids</strong><div class="muted" data-en="Comfortable shoes for little feet." data-rw="Inkweto nziza kandi zorohereza abana.">Comfortable shoes for little feet.</div><a href="#products" data-en="Explore collection →" data-rw="Reba izihari →">Explore collection →</a></div>
+ </div>
+</section>
+<section id="products">
+ <div class="section-head"><h2 data-en="Our shoes" data-rw="Inkweto zacu">Our shoes</h2><div class="muted" data-en="Product photo spaces are ready for your own pictures." data-rw="Imyanya y'amafoto yawe yateguwe; uzayashyiramo ukoresheje igice cya Admin hepfo.">Product photo spaces are ready for your own pictures.</div></div>
+ <div class="products" id="productGrid"></div>
+</section>
+<section class="promo"><h2 data-en="New looks. Great steps." data-rw="Imideri mishya. Intambwe nziza.">New looks. Great steps.</h2><p data-en="Find the right pair for school, work, weekends and special occasions." data-rw="Tugufasha kubona inkweto zibereye ishuri, akazi, weekend n'ibirori.">Find the right pair for school, work, weekends and special occasions.</p><a class="btn" href="https://wa.me/250786742468?text=Muraho%20NOLAN%20SHOES%20STORE%2C%20ndashaka%20kureba%20inkweto%20mufite." target="_blank" rel="noopener" data-en="CHAT ON WHATSAPP" data-rw="TUVUGISHE KURI WHATSAPP">CHAT ON WHATSAPP</a></section>
+<section class="admin" id="admin">
+ <div class="admin-panel">
+  <h2 data-en="Store manager – Add your shoes" data-rw="Ubuyobozi bw'iduka – Ongeramo inkweto">Store manager – Add your shoes</h2>
+  <p class="admin-note" data-en="Add a product photo from your device, product name, category, price and sizes. This demo saves products in this browser only. For a live public website, a secure online admin system and hosting still need to be set up." data-rw="Hitamo ifoto iri muri telefone cyangwa mudasobwa, wandike izina ry'inkweto, icyiciro, igiciro n'ingano. Iyi demo ibika ibicuruzwa muri browser ukoresha gusa. Kugira ngo bigaragare kuri website iri kuri internet, hazakenerwa hosting na sisitemu y'ubuyobozi ibika amakuru online.">Add a product photo from your device, product name, category, price and sizes. This demo saves products in this browser only. For a live public website, a secure online admin system and hosting still need to be set up.</p>
+  <form id="productForm">
+   <div><label for="photo" data-en="Product photo" data-rw="Ifoto y'inkweto">Product photo</label><input id="photo" type="file" accept="image/*" required></div>
+   <div><label for="name" data-en="Product name" data-rw="Izina ry'inkweto">Product name</label><input id="name" required placeholder="e.g. Classic sneakers"></div>
+   <div><label for="category" data-en="Category" data-rw="Icyiciro">Category</label><select id="category"><option value="Women & Girls">Women & Girls / Abagore n'abakobwa</option><option value="Men">Men / Abagabo</option><option value="Kids">Kids / Abana</option></select></div>
+   <div><label for="price" data-en="Price (RWF)" data-rw="Igiciro (RWF)">Price (RWF)</label><input id="price" type="number" min="0" placeholder="e.g. 25000"></div>
+   <div class="full"><label for="sizes" data-en="Available sizes" data-rw="Ingano zihari">Available sizes</label><input id="sizes" placeholder="e.g. 36, 37, 38, 39"></div>
+   <div class="full"><button type="submit" data-en="Add product to store" data-rw="Ongeramo inkweto">Add product to store</button></div>
+  </form>
+  <p class="admin-note" id="adminMessage" aria-live="polite"></p>
+ </div>
+</section>
+</main>
+<footer id="contact">
+ <div><div class="brand">NOLAN <span>SHOES</span> STORE</div><p class="foot-small" data-en="Shoes for women, men and kids." data-rw="Inkweto z'abagore, abagabo n'abana.">Shoes for women, men and kids.</p></div>
+ <div><strong data-en="Contact & Orders" data-rw="Twandikire kandi utumize">Contact & Orders</strong><p>WhatsApp: +250 786 742 468</p><a style="color:#f2a3c7" href="https://wa.me/250786742468" target="_blank" rel="noopener">WhatsApp</a></div>
+ <div class="foot-small">© <span id="year"></span> NOLAN SHOES STORE</div>
+</footer>
+<div class="cart-float"><button onclick="toggleCart()">🛍 <span data-en="Cart" data-rw="Agaseke">Cart</span> (<span id="cartCount2">0</span>)</button></div>
+<div class="cart-panel" id="cartPanel"><div style="display:flex;justify-content:space-between;align-items:center"><strong data-en="Your shopping cart" data-rw="Agaseke kawe">Your shopping cart</strong><button onclick="toggleCart()" aria-label="Close">✕</button></div><div id="cartItems"><p class="empty">Your cart is empty.</p></div><p class="small" data-en="Confirm final price and availability with the store." data-rw="Emeza igiciro n'uko inkweto zihari n'iduka.">Confirm final price and availability with the store.</p><button style="width:100%" onclick="orderWhatsApp()" data-en="Order on WhatsApp" data-rw="Tumiza kuri WhatsApp">Order on WhatsApp</button></div>
+<script>
+let lang='en', products=[], cart=[];
+const starter=[
+ {name:'Women & Girls – Add your photo',category:'Women & Girls',price:'',sizes:'',image:''},
+ {name:'Men – Add your photo',category:'Men',price:'',sizes:'',image:''},
+ {name:'Kids – Add your photo',category:'Kids',price:'',sizes:'',image:''}
+];
+function t(en,rw){return lang==='en'?en:rw}
+function toggleLang(){lang=lang==='en'?'rw':'en';document.documentElement.lang=lang;document.querySelectorAll('[data-en]').forEach(el=>{const val=el.dataset[lang];if(val!==undefined)el.innerHTML=val});renderProducts();renderCart()}
+function loadProducts(){try{products=JSON.parse(localStorage.getItem('nolanProducts')||'[]')}catch(e){products=[]}if(!products.length)products=starter.map(x=>({...x}))}
+function saveProducts(){try{localStorage.setItem('nolanProducts',JSON.stringify(products))}catch(e){document.getElementById('adminMessage').textContent=t('Storage is full. Try a smaller image.','Ububiko bwuzuye. Gerageza ifoto ntoya.');}}
+function renderProducts(){const grid=document.getElementById('productGrid');grid.innerHTML='';products.forEach((p,i)=>{const card=document.createElement('article');card.className='product';const photo=document.createElement('div');photo.className='photo-slot';if(p.image){const img=document.createElement('img');img.src=p.image;img.alt=p.name;photo.appendChild(img)}else{const ph=document.createElement('div');ph.className='placeholder';ph.innerHTML='<span style="font-size:34px">＋</span><b>'+t('Your photo goes here','Aha ni ho ushyira ifoto yawe')+'</b>';photo.appendChild(ph)}
+const info=document.createElement('div');info.className='product-info';const title=document.createElement('h3');title.textContent=p.name;const cat=document.createElement('p');cat.textContent=p.category;const price=document.createElement('div');price.className='price';price.textContent=p.price?Number(p.price).toLocaleString()+' RWF':t('Price: contact us','Igiciro: twandikire');const sizes=document.createElement('p');sizes.textContent=p.sizes?(t('Sizes: ','Ingano: ')+p.sizes):'';const actions=document.createElement('div');actions.className='product-actions';const add=document.createElement('button');add.textContent=t('Add to cart','Shyira mu gaseke');add.onclick=()=>{cart.push(p);renderCart();document.getElementById('cartPanel').style.display='block'};const wa=document.createElement('button');wa.textContent=t('WhatsApp','WhatsApp');wa.onclick=()=>window.open('https://wa.me/250786742468?text='+encodeURIComponent(t('Hello, I am interested in: ','Muraho, nshaka iyi nkweto: ')+p.name),'_blank');actions.append(add,wa);info.append(title,cat,price,sizes,actions);card.append(photo,info);grid.appendChild(card)})}
+function renderCart(){document.getElementById('cartCount').textContent=cart.length;document.getElementById('cartCount2').textContent=cart.length;const el=document.getElementById('cartItems');el.innerHTML='';if(!cart.length){el.innerHTML='<p class="empty">'+t('Your cart is empty.','Agaseke kawe karimo ubusa.')+'</p>';return}cart.forEach((p,i)=>{const line=document.createElement('div');line.className='cart-line';const span=document.createElement('span');span.textContent=p.name;const remove=document.createElement('button');remove.textContent=t('Remove','Kuramo');remove.onclick=()=>{cart.splice(i,1);renderCart()};line.append(span,remove);el.append(line)})}
+function toggleCart(){const p=document.getElementById('cartPanel');p.style.display=p.style.display==='block'?'none':'block'}
+function orderWhatsApp(){if(!cart.length){alert(t('Please add a shoe to your cart first.','Banza ushyire inkweto mu gaseke.'));return}const message=t('Hello NOLAN SHOES STORE, I would like to order:','Muraho NOLAN SHOES STORE, ndifuza gutumiza:')+'\n'+cart.map((p,i)=>(i+1)+'. '+p.name+(p.price?' – '+p.price+' RWF':'')).join('\n');window.open('https://wa.me/250786742468?text='+encodeURIComponent(message),'_blank')}
+document.getElementById('productForm').addEventListener('submit',e=>{e.preventDefault();const file=document.getElementById('photo').files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{products.push({name:document.getElementById('name').value.trim(),category:document.getElementById('category').value,price:document.getElementById('price').value,sizes:document.getElementById('sizes').value.trim(),image:reader.result});saveProducts();renderProducts();e.target.reset();document.getElementById('adminMessage').textContent=t('Product added in this browser.','Inkweto zongewemo muri iyi browser.');};reader.readAsDataURL(file)});
+document.getElementById('year').textContent=new Date().getFullYear();loadProducts();renderProducts();renderCart();
+</script>
+</body>
+</html>
